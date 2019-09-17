@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D Music</title>
+    <meta name="description" content="BOOSTERIO; Image - A-Frame">
+<!--    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> -->
+   
+ <script src="aframe.min.js"></script>
+  <script src="script.js"></script>
+  <script src="videoscript.js"></script>
+  <script src="functionscript.js"></script>
+  <script src="environment.js"></script>
+
+ 
+   
+
+ 
+  </head>
+  <body>
+  <audio src="intro.mp3" id="shubham" onload="myaudio()"></audio>
+ <script type="text/javascript">
+    setTimeout(function(){
+      document.getElementById("shubham").play();
+      console.log('your audio is started just now');
+    }, 7500)
+</script>	
+ <a-scene>
+	
+      <a-sky environment="preset: starry" position="0 -2 0"></a-sky>
+	
+	
+
+	  
+<a-assets>
+        <a-audio id="intro" src="koka.mp3"></a-audio>
+		<video id="video" loop="true" src="koka.webm" crossorigin="anonymous"></video>
+	    <a-audio id="badnam" src="lemberghini.mp3"></a-audio>
+		<video id="video2" loop="true" src="lemberghini.webm" crossorigin="anonymous"></video>
+		<a-audio id="allblack" src="Daru Badnaam.mp3"></a-audio>
+		<video id="video3" loop="true" src="darubadnaam.webm" crossorigin="anonymous"></video>
+	    <a-audio id="taara" src="wonderland.mp3"></a-audio>
+		<video id="video4" loop="true" src="wonderland.webm" crossorigin="anonymous"></video>
+		<a-audio id="bapu" src="Hauli Hauli.mp3"></a-audio>
+		<video id="video5" loop="true" src="haulihauli .webm" crossorigin="anonymous"></video>
+		<a-audio id="chitesuit" src="najanaja.mp3"></a-audio>
+        <video id="video6" loop="true" src="naja naja.webm" crossorigin="anonymous"></video>
+		<img id="playbtn" src="play.png">
+		<img id="pausebtn" src="pause.png">
+		
+		
+</a-assets>
+
+<!-- 1st video start-->
+    
+       <a-entity id="music" sound="src: #intro" ></a-entity> 
+     	
+		<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test"></a-entity>
+				
+		<a-video id="test" src="#video" position="-4.2 2 -7.5" width="4" height="3" onclick="select1()"></a-video>
+				
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #one"></a-entity>
+				
+			<a-entity id="one" geometry="primitive: circle; radius: 0.3" material="src: #pausebtn" position="-4.5 1.2 -7" visible="false" songpauser ></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo"></a-entity>
+
+            <a-entity id="demo" geometry="primitive: circle; radius: 0.3" material="src: #playbtn" position="-3.2 1.2 -7" visible="false" maxDistance="50" positional="true" songplayer></a-entity>
+				
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #seven"></a-entity>
+				
+			<a-entity id="seven" geometry="primitive: circle; radius: 0.3" material="color:black; opacity:0.5" position="-3.2 1.2 -7" visible="false" onclick="start()" videoplayer>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position=".1 0.015 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #eight"></a-entity>
+				
+			<a-entity id="eight" geometry="primitive: circle; radius: 0.3" material="color:black; opacity:0.5" position="-4.5 1.2 -7" visible="false" onclick="end()" videopause>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-.07 0 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position=".13 0 .06" shader="flat" width=".3" height="1"></a-plane>
+			</a-entity>
+				 
+
+  <!-- 1st video end-->
+      
+				
+				
+				
+<!-- 2nd video start-->
+				
+							
+				<a-entity id="music2" sound="src: #badnam"></a-entity>
+				
+	<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test2"></a-entity>
+		
+		<a-video id="test2" src="#video2" position="0 5.2 -7.5" width="4" height="3" onclick="select2()"></a-video>
+				
+				<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #two"></a-entity>
+				
+			<a-entity id="two" geometry="primitive: circle; radius: 0.5" material="color:pink" position="-0.8 4.4 -7" visible="false" songpauser2></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo2"></a-entity>
+
+            <a-entity id="demo2" geometry="primitive: circle; radius: 0.5" material="color:yellow" position="0.5 4.4 -7" visible="false" maxDistance="50" positional="true" songplayer2></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #nine"></a-entity>
+				
+			<a-entity id="nine" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="0.5 4.2 -7" visible="false" onclick="start2()" videoplayer2>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position=".1 -0.01 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #ten"></a-entity>
+				
+			<a-entity id="ten" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="-0.8 4.2 -7" visible="false" onclick="end2()" videopause2>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-.08 0 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position=".12 0 .06" shader="flat" width=".3" height="1"></a-plane>
+			</a-entity>
+
+
+   <!-- 2nd video end-->
+			
+	
+	
+	<!-- 3rd video start-->
+	 
+      <a-entity id="music3" sound="src: #allblack"></a-entity>
+	  
+	  <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test3"></a-entity>
+	  
+	  	<a-video id="test3" src="#video3" position="0 2 -7.5" width="4" height="3" onclick="select3()"></a-video>
+				
+		<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #three"></a-entity>
+				
+        <a-entity id="three" geometry="primitive: circle; radius: 0.5" material="color:red" position="-0.8 1.2 -7" visible="false" songpauser3></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo3"></a-entity>
+
+            <a-entity id="demo3" geometry="primitive: circle; radius: 0.5" material="color:lime" position="0.5 1.2 -7" visible="false" maxDistance="50" positional="true" songplayer3></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #eleven"></a-entity>
+				
+			<a-entity id="eleven" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="0.5 1.2 -7" visible="false" onclick="start3()" videoplayer3>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position=".1 0.015 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #twelve"></a-entity>
+				
+			<a-entity id="twelve" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="-0.8 1.2 -7" visible="false" onclick="end3()" videopause3>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-.08 0 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position=".12 0 .06" shader="flat" width=".3" height="1"></a-plane></a-entity>
+			
+			
+ <!-- 3rd video end-->
+				
+				
+<!-- 4th video start-->
+				
+				
+				<a-entity id="music4" sound="src: #taara"></a-entity>
+				
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test4"></a-entity>
+			
+			<a-video id="test4" src="#video4" position="4.2 5.2 -7.5" width="4" height="3" onclick="select4()"></a-video>
+				
+		<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #four"></a-entity>
+				
+		<a-entity id="four" geometry="primitive: circle; radius: 0.5" material="color:lime" position="3 4.4 -7" visible="false" songpauser4></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo4"></a-entity>
+
+            <a-entity id="demo4" geometry="primitive: circle; radius: 0.5" material="color:green" position="4.2 4.4 -7" visible="false" maxDistance="50" positional="true" songplayer4></a-entity>
+			
+
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #thirteen"></a-entity>
+				
+			<a-entity id="thirteen" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="4.5 4.2 -7" visible="false" onclick="start4()" videoplayer4>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position="0.03 -0.02 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle>
+			 </a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #fourteen"></a-entity>
+				
+			<a-entity id="fourteen" geometry="primitive: circle; radius: 0.3" material="color:black; opacity:0.5" position="3.3 4.2 -7" visible="false" onclick="end4()" videopause4>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-0.12 -0.03 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="0.09 -0.03 .06" shader="flat" width=".3" height="1"></a-plane></a-entity>
+				
+				
+	<!-- 4th video end-->		
+	
+	<!-- 5th video start-->
+      
+	  <a-entity id="music5" sound="src: #bapu"></a-entity>
+	  
+	  <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test5"></a-entity>
+	  
+	  <a-video id="test5" src="#video5" position="-4.2 5.2 -7.5" width="4" height="3" onclick="select5()"></a-video>
+				
+		<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #five"></a-entity>
+				
+		<a-entity id="five" geometry="primitive: circle; radius: 0.5" material="color:yellow" position="-4.5 4.4 -7" visible="false" songpauser5></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo5"></a-entity>
+
+            <a-entity id="demo5" geometry="primitive: circle; radius: 0.5" material="color:pink" position="-3.2 4.4 -7" visible="false" maxDistance="50" positional="true" songplayer5></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #fifteen"></a-entity>
+				
+			<a-entity id="fifteen" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="-3.2 4.2 -7" visible="false" onclick="start5()" videoplayer5>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position=".1 -0.01 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle>
+			 </a-entity>	
+			 
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #sixteen"></a-entity>
+				
+			<a-entity id="sixteen" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="-4.5 4.2 -7" visible="false" onclick="end5()" videopause5>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-.07 -0.01 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position=".13 -0.01 .06" shader="flat" width=".3" height="1"></a-plane></a-entity>
+
+
+<!--5th video end-->
+
+
+	  <!-- 6th video start-->
+	  
+	  <a-entity id="music6" sound="src: #chitesuit"></a-entity>
+	  
+	  <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #test6"></a-entity>
+	  
+	  <a-video id="test6" src="#video6" position="4.2 2 -7.5" width="4" height="3" 
+	  onclick="select6()"></a-video>
+				
+		<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #six"></a-entity>
+	  
+	  <a-entity id="six" geometry="primitive: circle; radius: 0.5" material="color:white" position="3 1.2 -6" visible="false" songpauser6></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #demo6"></a-entity>
+
+            <a-entity id="demo6" geometry="primitive: circle; radius: 0.5" material="color:red" position="4.2 1.2 -7" visible="false"maxDistance="50" positional="true"  songplayer6></a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #seventeen"></a-entity>
+				
+			<a-entity id="seventeen" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5
+			" position="4.5 1.2 -7" visible="false" onclick="start6()" videoplayer6>
+			<a-triangle id="playicon" color="white" depth=".01" scale="0.4 0.4 0.4" rotation="0 0 -90" 
+             position="0.05 0.015 .06" shader="flat" width="2" height="2" vertex-a="0 .3 0" ></a-triangle>
+			 </a-entity>
+			
+			<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #eightteen"></a-entity>
+			
+		
+			<a-entity id="eightteen" geometry="primitive: circle; radius: 0.3" material="color:black;opacity:0.5" position="3.3 1.2 -7" visible="false" onclick="end6()" videopause6>
+			<a-plane id="pauseiconleft" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="-0.1 0 .06" shader="flat" width=".3" height="1"  ></a-plane>
+            <a-plane id="pauseiconright" color="white" depth=".1" scale="0.4 0.4 0.4" 
+            position="0.10 0 .06" shader="flat" width=".3" height="1"></a-plane></a-entity>
+
+	  
+	 <!-- 6th video end--> 
+	  
+	  <!--light start -->
+	  
+	
+	  <a-entity light="type:point;color: red; intensity: 0.5; decay:1.0" position="8 2 -4"
+	animation="property:position; to: 8 0.5 -4; dur:3000; easing: easeInOutElastic; loop:true"></a-entity>
+	
+	<a-entity light="type:point;color: yellow; intensity: 0.5;" position="9 2 2.2"
+	animation="property:position; to: 9 0.5 2.2; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: purple; intensity: 0.5;" position="3.3 2 8"
+	animation="property:position; to: 3.3 0.5 8; dur: 3000; easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: green; intensity: 0.5;" position="-8 2 -4"
+	animation="property:position; to: -8 0.5 -4; dur: 3000;easing: easeInOutElastic;
+	 loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: blue; intensity: 0.5;" position="-9 2 2.2"
+	animation="property:position; to: -9 0.5 2.2; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: lime; intensity: 0.5;" position="-3.5 2 8"
+	animation="property:position; to: -3.5 0.5 8; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<!-- light end -->
+	
+	
+	
+
+<!--Animation start-->
+
+
+
+<a-entity id="wall" primitive="property:plane" position="4 0 2" visible="false">
+
+
+<a-entity light="type:point;color: green; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: green; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: green; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: green; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: green; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.5 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.15 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.11 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;delay:1500; height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:4000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.5 1; dur:200; delay:3500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:4500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:9.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:3000; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:6.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:8.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:8.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200;delay:6000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.25 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.05 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:350; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:400; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+
+<a-entity id="wall2" primitive="property:circle; radius:15" position="4 0 2" visible="false">
+	
+	<a-entity light="type:point;color: red; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: red; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: red; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color:red; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: red; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.2 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 2 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 1.9 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 1.7 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 1.9 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 1.8 1; dur:200; delay:800; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:9.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 1.8 1; dur:200; delay:1200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.4 1; dur:200; delay:800; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:600; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 1.3 1; dur:200;  easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:6.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:1400; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:8.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+     animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:6.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+     animation="property:scale; to: 1 1.9 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.4 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+     animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+
+<a-entity id="wall3" primitive="property:circle; radius:15" position="4 0 2" visible="false">
+
+<a-entity light="type:point;color: purple; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: purple; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: purple; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color:purple; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color:purple; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.9 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 2.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.6 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 2.2 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 2.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 2 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.9 1; dur:200; delay:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.15 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 2.1 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 2 1; dur:200; delay:800; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 2.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.9 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:4.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 2.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.9 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:5.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 2.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 2.2 1; dur:200; delay:1200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.8 1; dur:200; delay:800; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.9 1; dur:200; delay:600; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.8 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 2 1; dur:200;  easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:5.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 2.5 1; dur:200; delay:700; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1400; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:6.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+     animation="property:scale; to: 1 2.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:6.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+     animation="property:scale; to: 1 1.9 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.2 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+     animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.15 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 2.1 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 2.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+
+<a-entity id="wall4" primitive="property:plane" position="4 0 2" visible="false">
+
+
+<a-entity light="type:point;color: blue; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: blue; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: blue; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: blue; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: blue; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.5 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.15 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.11 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;delay:1500; height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:4000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.5 1; dur:200; delay:3500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:4500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:9.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:3000; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:6.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:8.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:8.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200;delay:6000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.25 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.05 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:350; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:400; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+	  
+<a-entity id="wall5" primitive="property:plane" position="4 0 2" visible="false">
+
+
+<a-entity light="type:point;color: #006a4e; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #006a4e; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #006a4e; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #006a4e; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #006a4e; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.5 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.15 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.11 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;delay:1500; height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:4000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.5 1; dur:200; delay:3500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:4500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:9.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:3000; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:6.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:8.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:8.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200;delay:6000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.25 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.05 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:350; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:400; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+
+<a-entity id="wall6" primitive="property:plane" position="4 0 2" visible="false">
+
+
+<a-entity light="type:point;color: #FF00FF; intensity: 0.5;" position="0 0.5 -9.5" rotation="0 90 0"
+	animation="property:position; to:0 0.5 -11.5; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #FF00FF; intensity: 0.5;" position="-5 0.5 -11"
+	animation="property:position; to: -5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #FF00FF; intensity: 0.5;" position="-12 0.5 -4"
+	animation="property:position; to: -13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #FF00FF; intensity: 0.5;" position="5 0.5 -11"
+	animation="property:position; to:5 0.5 -9; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+	
+	<a-entity light="type:point;color: #FF00FF; intensity: 0.5;" position="12 0.5 -4"
+	animation="property:position; to:13.5 0.5 -4; dur: 3000;easing: easeInOutElastic; loop:true;"></a-entity>
+
+	
+      <a-entity id="box0" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-4 -2 -14.5"
+	  animation="property:scale; to: 1 1.5 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+			
+      <a-entity id="box1" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="-3.3 -2 -14.2"
+	  animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box2" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-2.6 -2 -13.9"
+	  animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box3" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-1.9 -2 -13.6"
+	  animation="property:scale; to: 1 1.15 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	  
+      <a-entity id="box4" geometry="primitive: box; width:1; height:5; depth:0.3" material="color: white;opacity:0.8" position="-1.2 -2 -13.3"
+	  animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	 <a-entity id="box5" geometry="primitive: box; width:1; delay:5000; height:5.5; depth:0.3" material="color: white;opacity:0.8" position="-0.5 -2 -13"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box6" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="0.2 -2 -12.7"
+	 animation="property:scale; to: 1 1.11 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box7" geometry="primitive: box; width:1;delay:1500; height:7; depth:0.3" material="color: white;opacity:0.8" position="0.9 -2 -12.4"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box8" geometry="primitive: box; width:1; height:6; depth:0.3" material="color: white;opacity:0.8" position="1.6 -2 -12.1"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box9" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="2.3 -2 -11.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200; delay:3000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box10" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="3 -2 -11.5"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box11" geometry="primitive: box; width:1; delay:1000; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="3.7 -2 -11.2"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box12" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="4.4 -2 -10.9"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:4000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box13" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="5.1 -2 -10.6"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box14" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="5.8 -2 -10.3"
+	 animation="property:scale; to: 1 1.8 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box15" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="6.5 -2 -10"
+	 animation="property:scale; to: 1 1.5 1; dur:200; delay:3500; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box16" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="7.2 -2 -9.7"
+	 animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box17" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="7.9 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box18" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="8.6 -2 -9.1"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box19" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="9.3 -2 -8.8"
+	 animation="property:scale; to: 1 1.1 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box20" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.5"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box21" geometry="primitive: box; width:1; height:9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -8.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:4500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box22" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.9"
+	animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box23" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.6"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:1500; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box24" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7.3"
+	animation="property:scale; to: 1 1.5 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box25" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -7"
+	animation="property:scale; to: 1 1.5 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box26" geometry="primitive: box; width:1; height:9.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.7"
+	animation="property:scale; to: 1 1.1 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box27" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box28" geometry="primitive: box; width:1; height:7; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -6.1"
+	animation="property:scale; to: 1 1.7 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box29" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box30" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="10 -2 -5.5"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+    <a-entity id="box31" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-4.7 -2 -14.2"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:3000; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box32" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-5.4 -2 -13.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box33" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-6.1 -2 -13.6"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:2500; easing:linear; loop:true"></a-entity>
+	  
+    <a-entity id="box34" geometry="primitive: box; width:1; height:6.9; depth:0.3" material="color: white;opacity:0.8" position="-6.8 -2 -13.3"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+     
+	<a-entity id="box35" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-7.5 -2 -13"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box36" geometry="priitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-8.2 -2 -12.7"
+	animation="property:scale; to: 1 1.2 1; dur:200;delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box37" geometry="primitive: box; width:1; height:8.8; depth:0.3" material="color: white;opacity:0.8" position="-8.9 -2 -12.4"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box38" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-9.6 -2 -12.1" visible="true"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box39" geometry="primitive: box; width:1; height:9.1; depth:0.3" material="color: white;opacity:0.8" position="-10.4 -2 -11.8"
+	animation="property:scale; to: 1 1.35 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box40" geometry="primitive: box; width:1; height:8.2; depth:0.3" material="color: white;opacity:0.8" position="-11.1 -2 -11.5"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:5000; easing:linear; loop:true"></a-entity>
+	 
+    <a-entity id="box41" geometry="primitive: box; width:1; height:6.7; depth:0.3" material="color: white;opacity:0.8" position="-11.8 -2 -11.2"
+	animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box42" geometry="primitive: box; width:1; height:7.5; depth:0.3" material="color: white;opacity:0.8" position="-12.5 -2 -10.9"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box43" geometry="primitive: box; width:1; height:8.4; depth:0.3" material="color: white;opacity:0.8" position="-13.2 -2 -10.6"
+	 animation="property:scale; to: 1 1.3 1; dur:200; delay:2000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box44" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-13.9 -2 -10.3"
+	 animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box45" geometry="primitive: box; width:1; height:8.3; depth:0.3" material="color: white;opacity:0.8" position="-14.6 -2 -10"
+	 animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box46" geometry="primitive: box; width:1; height:7.6; depth:0.3" material="color: white;opacity:0.8" position="-15.3 -2 -9.7"
+	 animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box47" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-16 -2 -9.4"
+	 animation="property:scale; to: 1 1.3 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box48" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-16.7 -2 -9.1"
+	 animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box49" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-17.4 -2 -8.8"
+	 animation="property:scale; to: 1 1.2 1; dur:200;delay:6000; easing:linear; loop:true"></a-entity>
+	 
+	 <a-entity id="box50" geometry="primitive: box; width:1; height:6.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.5"
+	 animation="property:scale; to: 1 1.6 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box51" geometry="primitive: box; width:1; height:7.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -8.2"
+	animation="property:scale; to: 1 1.25 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box52" geometry="primitive: box; width:1; height:9.3; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.9"
+	animation="property:scale; to: 1 1.05 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box53" geometry="primitive: box; width:1; height:7.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.6"
+	animation="property:scale; to: 1 1.2 1; dur:200; delay:350; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box54" geometry="primitive: box; width:1; height:8.5; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7.3"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box55" geometry="primitive: box; width:1; height:7.2; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -7"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box56" geometry="primitive: box; width:1; height:7.9; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.7"
+	animation="property:scale; to: 1 1.3 1; dur:200; delay:400; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box57" geometry="primitive: box; width:1; height:8.6; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.4"
+	animation="property:scale; to: 1 1.4 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box58" geometry="primitive: box; width:1; height:6.8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -6.1"
+	animation="property:scale; to: 1 1.2 1; dur:200; easing:linear; loop:true"></a-entity>
+	 
+	<a-entity id="box59" geometry="primitive: box; width:1; height:8.7; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.8"
+	animation="property:scale; to: 1 1.1 1; dur:200; easing:linear; loop:true"></a-entity>
+	
+	<a-entity id="box60" geometry="primitive: box; width:1; height:8; depth:0.3" material="color: white;opacity:0.8" position="-18.1 -2 -5.5"
+	animation="property:scale; to: 1 1.6 1; dur:200; delay:1000; easing:linear; loop:true"></a-entity>
+				
+</a-entity>
+	  
+	  
+	  
+	  <!--Animation end-->
+	
+	
+	
+	<script>
+
+   function start(){
+   document.getElementById("wall").setAttribute('visible', true);}
+   function end(){
+   document.getElementById("wall").setAttribute('visible', false);}
+   function start2(){
+   document.getElementById("wall2").setAttribute('visible', true);}
+   function end2(){
+   document.getElementById("wall2").setAttribute('visible', false);}
+   function start3(){
+   document.getElementById("wall3").setAttribute('visible', true);}
+   function end3(){
+   document.getElementById("wall3").setAttribute('visible', false);}
+   function start4(){
+   document.getElementById("wall4").setAttribute('visible', true);}
+   function end4(){
+   document.getElementById("wall4").setAttribute('visible', false);}
+   function start5(){
+   document.getElementById("wall6").setAttribute('visible', true);}
+   function end5(){
+   document.getElementById("wall6").setAttribute('visible', false);}
+   function start6(){
+   document.getElementById("wall5").setAttribute('visible', true);}
+   function end6(){
+   document.getElementById("wall5").setAttribute('visible', false);}   
+	</script>
+	
+  </body>
+</html>

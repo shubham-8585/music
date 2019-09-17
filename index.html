@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D Music</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=cyrillic-ext,latin,latin-ext' rel='stylesheet' type='text/css'> 
+  
+  
+      <link rel="stylesheet" href="./style.css">
+<style>
+@media only screen and (min-width:768px){
+html {
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  -ms-touch-action: none;
+  -ms-content-zooming: none;
+  user-select: none;
+   background-image: url(s85Fdw.png);
+   background-repeat:no-repeat;
+   background-size:100% 100%;
+  color: #000;
+  min-height: 100%;
+  height: 100%;
+  font-weight: 700;
+}
+html body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+html body #copy {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 14px;
+  font-size: 10px;
+  font-weight: 400;
+  z-index: 999;
+}
+html body #copy a {
+  color: #898989;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out 0s;
+}
+html body #copy a b {
+  font-weight: 700;
+}
+html body #copy a:hover {
+  color: #fff;
+}
+html body #editor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  text-align: center;
+}
+html body #editor .typer input {
+  border: 0;
+  border-bottom: solid 1px #2f2f2f;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+html body #editor .typer input:focus {
+  outline: none;
+  box-shadow: 0 none;
+}
+html body #editor .typer .hint {
+  position: relative;
+  font-size: 10px;
+  font-weight: 100;
+  text-align: center;
+  float: none;
+  display: block;
+  width: 100%;
+  color: #767676;
+  cursor: default;
+}
+html body #wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+html body #wrapper .text:nth-child(30) {
+  font-size: 120px;
+}
+html body #wrapper .text:nth-child(29) {
+  font-size: 117px;
+}
+html body #wrapper .text:nth-child(28) {
+  font-size: 114px;
+}
+html body #wrapper .text:nth-child(27) {
+  font-size: 111px;
+}
+html body #wrapper .text:nth-child(26) {
+  font-size: 108px;
+}
+html body #wrapper .text:nth-child(25) {
+  font-size: 105px;
+}
+html body #wrapper .text:nth-child(24) {
+  font-size: 102px;
+}
+html body #wrapper .text:nth-child(23) {
+  font-size: 99px;
+}
+html body #wrapper .text:nth-child(22) {
+  font-size: 96px;
+}
+html body #wrapper .text:nth-child(21) {
+  font-size: 93px;
+}
+html body #wrapper .text:nth-child(20) {
+  font-size: 90px;
+}
+html body #wrapper .text:nth-child(19) {
+  font-size: 87px;
+}
+html body #wrapper .text:nth-child(18) {
+  font-size: 84px;
+}
+html body #wrapper .text:nth-child(17) {
+  font-size: 81px;
+}
+html body #wrapper .text:nth-child(16) {
+  font-size: 78px;
+}
+html body #wrapper .text:nth-child(15) {
+  font-size: 75px;
+}
+html body #wrapper .text:nth-child(14) {
+  font-size: 72px;
+}
+html body #wrapper .text:nth-child(13) {
+  font-size: 69px;
+}
+html body #wrapper .text:nth-child(12) {
+  font-size: 66px;
+}
+html body #wrapper .text:nth-child(11) {
+  font-size: 63px;
+}
+html body #wrapper .text:nth-child(10) {
+  font-size: 60px;
+}
+html body #wrapper .text:nth-child(9) {
+  font-size: 57px;
+}
+html body #wrapper .text:nth-child(8) {
+  font-size: 54px;
+}
+html body #wrapper .text:nth-child(7) {
+  font-size: 51px;
+}
+html body #wrapper .text:nth-child(6) {
+  font-size: 48px;
+}
+html body #wrapper .text:nth-child(5) {
+  font-size: 45px;
+}
+html body #wrapper .text:nth-child(4) {
+  font-size: 42px;
+}
+html body #wrapper .text:nth-child(3) {
+  font-size: 39px;
+}
+html body #wrapper .text:nth-child(2) {
+  font-size: 36px;
+}
+html body #wrapper .text:nth-child(1) {
+  font-size: 33px;
+}
+html body #wrapper .text {
+  cursor: default;
+  position: absolute;
+  height: 100%;
+  width: 2000px;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  left: 50%;
+  top:-10%;
+  transform: translate(-50%);
+  letter-spacing: 10px;
+  opacity: 0;
+}
+.enter a{
+font-size:35px;
+left:43%;
+top:57%;
+padding:5px 20px;
+border:3px solid white;
+border-radius:25px;
+color:white;
+font-family:times;
+text-decoration:none;
+position:absolute;
+}
+.enter a:hover{
+	background-color:#9e9696;
+	color:black;
+	transition:all 1s;
+	border:3px solid black;
+	
+	
+
+	
+}
+.headphones{
+position:absolute;
+top:4%;
+left:1%;
+}
+#icon1::before{
+content:"\f025";
+font-family:FontAwesome;
+font-size:30px;
+color:white;
+}
+.volume{
+position:absolute;
+top:4%;
+left:5%;
+}
+#icon2::before{
+content:"\f028";
+font-family:FontAwesome;
+font-size:30px;
+color:white;
+}
+.question{
+position:absolute;
+top:4%;
+left:97%;
+}
+#icon3::before{
+content:"\f05a";
+font-family:FontAwesome;
+font-size:30px;
+color:white;
+}
+.music{
+position:absolute;
+font-size:15px;
+color:white;
+top:90%;
+left:1%;
+}
+.terms a{
+position:absolute;
+color:white;
+font-size:12px;
+left:92%;
+top:96%;
+}
+.presented{
+position:absolute;
+color:white;
+font-family:times;
+text-align:center;
+font-size:20px;
+left:45%;
+top:70%;	
+}
+}
+</style>  
+</head>
+
+<body>
+
+  
+<div id="wrapper">
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+  <div class="text">3D MUSIC</div>
+</div>
+<!-- <div id="editor">
+  <div class="typer">
+    <input type="text" name="text" value="3D MUSIC"/>
+    <div class="hint">Type Something</div>
+  </div>
+</div>
+<div id="copy"><a href="https://twitter.com/igcorreia" target="_blank">Crafted by: <b>@igcorreia</b><br/>Searching for a Dribbble invite :)</a></div> -->
+
+<div class="enter"><a href="index2.html"><b>EXPLORE</b></a></div>
+
+<div class="headphones">
+<span id="icon1"></span>
+</div>  
+<div class="volume"><span id="icon2"></span>
+</div>
+
+<div class="question"><span id="icon3"></span></div>
+
+<div class="music"><span style="font-size:15px">This is a</span><br/>WebVR Music</div>
+
+<div class="terms"><a href="#">privacy & terms</a></div>
+
+<div class="presented">
+Presented by<br/>Megha & Shubham
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+<script>
+/* 
+* Hi and Welcome to Codepen!
+*
+* My name is Ignacio and I am looking for a Dribble invitation.
+* Please contact me via twitter if you have 1, 
+* I would like to have 1 hehe :)
+* 
+*
+* Finally I can reproduce in CSS what I managed to design in Photoshop. 
+* Still not all browsers allow for the creatives to reproduce everything.
+* We still have browser compatibility problems.
+*
+* I will keep publishing examples to help push the web foward.
+* PLEASE Like, Heart or Share if you like, and don't forget to follow. 
+* Thanks.
+*
+* Now let's animate it :)
+*/
+
+$(document).ready(function(){
+	var tl = new TimelineLite()
+	,inter = 30
+  ,speed = 1
+  ,$text = $('.text');
+  function animInfinite(){
+    $('.text').each(function(index,val) {
+      index = index + 1;
+      TweenMax.fromTo(
+        $(this), speed, {autoAlpha:0},{autoAlpha:0+(0.01*index),delay:0.1*index});
+     });
+    TweenMax.to(
+      $('.text:nth-child(30)'), speed,{autoAlpha:1.5,delay:3.5}
+    );
+  }
+  $('.typer input').keyup(function() {
+    //Stop Everything First
+    TweenMax.killAll(false, true, false);
+    TweenMax.set($text, {autoAlpha:0});
+    $text.text(this.value);
+     animInfinite();
+  });
+  animInfinite();
+});
+</script>
+</body>
+
+</html>
